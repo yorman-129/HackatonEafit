@@ -28,8 +28,5 @@ public class taskController {
     public Optional<Task> findByTask(@PathVariable Long id){
         return taskService.findById(id);
     }
-    @DeleteMapping("deleteTask/{id}")
-    public void deleteTask(@PathVariable Long id){
-        taskService.deleteById(id);
-    }
+    
 }
