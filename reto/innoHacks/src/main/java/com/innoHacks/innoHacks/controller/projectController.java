@@ -16,6 +16,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/")
 @RequiredArgsConstructor
+@CrossOrigin("*")
 public class projectController {
     @Autowired
     private ProjectService serviceProject;
@@ -25,15 +26,23 @@ public class projectController {
         serviceProject.saveProject(project);
     }
 
+<<<<<<< HEAD
+    @GetMapping("/projects")
+=======
     @GetMapping("/projects/")
+>>>>>>> 891d0930aad7a65d4b101263d9199ae49e084695
     public List<Project> allProjects(){ return serviceProject.allProjects(); }
 
     @GetMapping("/project/{id}")
     public  Project findProject(@PathVariable Long id){ return serviceProject.findProject(id);}
 
     @DeleteMapping("/project/{id}")
+<<<<<<< HEAD
+    public void deleteProject(@PathVariable("id") Long id){ serviceProject.deleteProject(id);}
+=======
     public ResponseEntity<?> deleteProject(@PathVariable("id") Long id){ serviceProject.deleteProject(id);
         return new ResponseEntity<>("El proyecto fue borrado exitosamente", HttpStatus.OK);
     }
+>>>>>>> 891d0930aad7a65d4b101263d9199ae49e084695
 
 }
