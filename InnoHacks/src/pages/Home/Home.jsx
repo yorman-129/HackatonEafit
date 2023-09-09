@@ -1,9 +1,7 @@
-import React from 'react'
+import ModalCreateProject from "../../components/ModalCreateProject/ModalCreateProject";
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+  return <ModalCreateProject />;
+};
 
-export default Home
+export default Home;
