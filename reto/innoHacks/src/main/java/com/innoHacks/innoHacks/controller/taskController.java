@@ -24,8 +24,12 @@ public class taskController {
     public List<Task> findAllTask(){
         return taskService.findAll();
     }
-    @GetMapping("findById")
+    @GetMapping("findById/{id}")
     public Optional<Task> findByTask(@PathVariable Long id){
         return taskService.findById(id);
+    }
+    @DeleteMapping("deleteTask/{id}")
+    public void deleteTask(@PathVariable Long id){
+        taskService.deleteById(id);
     }
 }

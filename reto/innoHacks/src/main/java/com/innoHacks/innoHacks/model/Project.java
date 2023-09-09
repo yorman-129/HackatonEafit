@@ -16,10 +16,9 @@ import org.springframework.data.annotation.Id;
 
 public class Project {
     @Id
-    public Long id;
-    public String nameProject;
-    public String description;
-    public String creationDate;
-    public String status;
-
+    private Long id;
+    private String nameProject;
+    private String description;
+    private String creationDate;
+    private String status;
 }
