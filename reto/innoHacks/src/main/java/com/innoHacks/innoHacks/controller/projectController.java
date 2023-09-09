@@ -22,4 +22,7 @@ public class projectController {
         serviceProject.saveProject(project);
     }
 
+    @GetMapping
+    public List<Project> allProjects(){ return serviceProject.allProjects(); }
+
 }
