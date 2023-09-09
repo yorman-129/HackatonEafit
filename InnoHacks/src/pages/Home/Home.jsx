@@ -4,14 +4,15 @@ import "./Home.scss"
 const Home = () => {
   return (
     <>
-      <div class="home">
-        <div class="home-button">
+      <div className="home">
+        <div className="home-button">
           <button>Crear Nuevo Proyecto</button>
         </div>
-        <div class="home-button">
+        <div className="home-button">
           <button>Gestionar Proyecto</button>          
         </div>
       </div>
+
     </>
   )
 }
