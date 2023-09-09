@@ -16,6 +16,7 @@ import {
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import apiService from "../../services/api";
 
 const ModalCreateProject = () => {
   const navigate = useNavigate();
@@ -52,9 +53,6 @@ const ModalCreateProject = () => {
       return; // Evita el envío del formulario si la validación falla
     }
 
-    // Navegar a la página de detalle del proyecto.
-    //navigate("/ProjectDetail");
-
     // Crear un objeto con los datos del formulario
     const newProject = { ...formData };
 
@@ -70,9 +68,19 @@ const ModalCreateProject = () => {
       description: "",
       status: "",
       creationDate: "",
+      id: 0,
+    });
+
+    console.log(projects[0]);
+
+    // Enviar el formulario a la API
+    apiService.createProject(projects[0], "addProject").then((data) => {
+      console.log(data);
+      // Navegar a la página de detalle del proyecto.
+      navigate("/ProjectDetail", { state: data });
     });
   };
-  console.log(projects[0]);
+
   return (
     <>
       <Button onClick={onOpen}>Crear Proyecto</Button>
