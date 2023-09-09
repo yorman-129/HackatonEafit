@@ -1,0 +1,30 @@
+.home {
+    display: flex;
+    flex-direction: column;    
+    height: 96vh;
+    justify-content: center;
+    background-color:  rgb(48, 48, 48);
+    text-align: center;
+    align-items: center;
+}
+
+.home-button{
+    padding-top: 7px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 40%;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 2px 2px 2px #000;
+    cursor: pointer;
+    background-color: white;
+    color: var(--chakra-colors-blue-600);
+
+    &:hover  {
+        background-color: var(--chakra-colors-blue-600);
+        color: white;
+    }
+}
+
