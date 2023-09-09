@@ -21,4 +21,8 @@ public class Project {
     private String description;
     private String creationDate;
     private String status;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 891d0930aad7a65d4b101263d9199ae49e084695
 }
