@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class taskService {
+public class TaskService {
     @Autowired
     private TaskInterfaceRepository taskInterfaceRepository;
 
