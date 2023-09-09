@@ -23,6 +23,7 @@ public class projectController {
         serviceProject.saveProject(project);
     }
 
+<<<<<<< HEAD
 
     @GetMapping("projects")
     public List<Project> allProjects(){ return serviceProject.allProjects(); }
@@ -31,5 +32,15 @@ public class projectController {
     public Project findProject(@PathVariable Long id){
         return serviceProject.findProject(id);
     }
+=======
+    @GetMapping("/projects/")
+    public List<Project> allProjects(){ return serviceProject.allProjects(); }
+
+    @GetMapping("/project/{id}")
+    public  Project findProject(@PathVariable Long id){ return serviceProject.findProject(id);}
+
+    @DeleteMapping("/project/{id}")
+    public void deleteProject(@PathVariable("id") Long id){ serviceProject.deleteProject(id);}
+>>>>>>> 1c94c4d4bd66828b5a4f26c3fa6efd34feffffaa
 
 }
