@@ -1,1 +1,10 @@
 // Estilos globales
+/* Estilo personalizado para SweetAlert2 */
+.my-custom-swal-container {
+  /* Estilos para el contenedor */
+  z-index: 9999 !important;
+}
+
+.chakra-modal__overlay {
+  z-index: 1 !important;
+}
