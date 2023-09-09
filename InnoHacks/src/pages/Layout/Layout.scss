@@ -1,0 +1,12 @@
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(48, 48, 48);
+    padding: 20px;
+    color: white;
+    height: 80px;
+    &__projects{
+        font-weight: 700;
+    }
+}
