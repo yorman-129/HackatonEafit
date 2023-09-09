@@ -10,7 +10,6 @@ const Layout = () => {
                 <li> <Link to="/home">Home</Link></li>
             </ul>
         </nav>
-        <div>Esta es la parte donde se va a compartir con los otros componentes</div>
         <Outlet/>
     </>
   )
