@@ -1,0 +1,32 @@
+
+.container-cards{
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 30px;
+    padding-top: 80px;
+}
+
+#main-card{
+    border-radius: 20px;
+    background: #e0e0e0;
+    box-shadow:  18px 18px 36px #c5c5c5,
+                -18px -18px 36px #fbfbfb;
+    width: 300px;
+}
+
+.task{
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+#card-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+#task-icons{
+    display: flex;
+    gap: 10px;
+}
