@@ -21,7 +21,5 @@ public class projectController {
     public void saveProject(@RequestBody Project project){
         serviceProject.saveProject(project);
     }
-    @GetMapping
-    public List<Project> allProjects(){ return serviceProject.allProjects(); }
 
 }
