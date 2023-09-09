@@ -34,7 +34,7 @@ const ModalCreateProject = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     // Validación de datos del formulario (puedes agregar aquí)
     if (!formData.nameProject || !formData.status) {
       // Si faltan campos obligatorios, muestra un mensaje de error o realiza la acción necesaria
@@ -44,41 +44,43 @@ const ModalCreateProject = () => {
         text: "Por favor, completa los campos obligatorios.",
         customClass: {
           // Aquí puedes definir el estilo personalizado
-          container: "my-custom-swal-container", // Clase CSS para el contenedor
-          popup: "my-custom-swal-popup", // Clase CSS para el popup
-          title: "my-custom-swal-title", // Clase CSS para el título
-          htmlContainer: "my-custom-swal-html-container", // Clase CSS para el contenido HTML
+          container: "my-custom-swal-container",
+          popup: "my-custom-swal-popup",
+          title: "my-custom-swal-title",
+          htmlContainer: "my-custom-swal-html-container",
         },
       });
-      return; // Evita el envío del formulario si la validación falla
+      return;
     }
 
-    // Crear un objeto con los datos del formulario
-    const newProject = { ...formData };
+    try {
+      // Crear un objeto con los datos del formulario
+      const newProject = { ...formData };
 
-    // Agregar el objeto al array de proyectos
-    setProjects([...projects, newProject]);
+      // Enviar el proyecto a la API y esperar la respuesta
+      const response = await apiService.createProject(newProject, "addProject");
 
-    // Cerrar el modal
-    onClose();
+      // Agregar el proyecto a la lista de proyectos (si es necesario)
+      setProjects([...projects, response]);
 
-    // Reiniciar los campos del formulario
-    setFormData({
-      nameProject: "",
-      description: "",
-      status: "",
-      creationDate: "",
-      id: 0,
-    });
+      // Cerrar el modal
+      onClose();
 
-    console.log(projects[0]);
+      // Reiniciar los campos del formulario
+      setFormData({
+        nameProject: "",
+        description: "",
+        status: "",
+        creationDate: "",
+        id: 0,
+      });
 
-    // Enviar el formulario a la API
-    apiService.createProject(projects[0], "addProject").then((data) => {
-      console.log(data);
-      // Navegar a la página de detalle del proyecto.
-      navigate("/ProjectDetail", { state: data });
-    });
+      // Navegar a la página de detalle del proyecto con la respuesta de la API
+      navigate("/ProjectDetail", { state: response });
+    } catch (error) {
+      // Manejar errores de la API (puedes mostrar un mensaje de error aquí)
+      console.error("Error al crear el proyecto:", error);
+    }
   };
 
   return (
