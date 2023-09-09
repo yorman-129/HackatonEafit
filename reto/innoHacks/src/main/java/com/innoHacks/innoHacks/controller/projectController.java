@@ -33,7 +33,7 @@ public class projectController {
 
     @DeleteMapping("/project/{id}")
     public ResponseEntity<?> deleteProject(@PathVariable("id") Long id){ serviceProject.deleteProject(id);
-        return new ResponseEntity<>("El proyecto fue borrado exitosamente", HttpStatus.OK);;
+        return new ResponseEntity<>("El proyecto fue borrado exitosamente", HttpStatus.OK);
     }
 
 }
