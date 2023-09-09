@@ -22,7 +22,13 @@ public class projectController {
         serviceProject.saveProject(project);
     }
 
-    @GetMapping
+    @GetMapping("/projects/")
     public List<Project> allProjects(){ return serviceProject.allProjects(); }
+
+    @GetMapping("/project/{id}")
+    public  Project findProject(@PathVariable Long id){ return serviceProject.findProject(id);}
+
+    @DeleteMapping("/project/{id}")
+    public void deleteProject(@PathVariable("id") Long id){ serviceProject.deleteProject(id);}
 
 }
