@@ -6,11 +6,12 @@ import org.springframework.data.annotation.Id;
 
 @Data
 @Builder
-public class Project {
+public class Task {
     @Id
     private String taskId;
-    private String nombre;
+    private String nameTask;
     private String description;
     private Integer state;
-    private String
+    private String tipo;
+    private String fechaInicio;
 }
